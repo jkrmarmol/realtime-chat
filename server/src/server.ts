@@ -8,10 +8,10 @@ const server = createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "http://localhost:3000",
     credentials: true,
-    allowedHeaders: ["X-Requested-With", "content-type"],
-    methods: ["GET", "POST", "DELETE", "PUT"],
+    // allowedHeaders: ["X-Requested-With", "content-type"],
+    // methods: ["GET", "POST", "DELETE", "PUT"],
   },
 });
 
