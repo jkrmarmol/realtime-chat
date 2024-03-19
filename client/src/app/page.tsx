@@ -4,7 +4,7 @@ import OtherMessage from "./components/other-message";
 import { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 
-const socket = io(`ws://realtime-chat-byr3.onrender.com`);
+const socket = io(process.env.NEXT_PUBLIC_SERVER_URI as string);
 
 export default function Home() {
   const [chatList, setChatList] = useState<
