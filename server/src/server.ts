@@ -9,6 +9,9 @@ const server = createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
+    credentials: true,
+    allowedHeaders: ["X-Requested-With", "content-type"],
+    methods: ["GET", "POST", "DELETE", "PUT"],
   },
 });
 
