@@ -1,14 +1,17 @@
+import { config } from "dotenv";
+import path from "path";
 import express from "express";
 import { Server } from "socket.io";
 import { createServer } from "http";
 
+config({ path: path.resolve(process.cwd(), ".env") });
 const app = express();
 const PORT = 8972;
 const server = createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_URI,
   },
 });
 
